@@ -12,13 +12,14 @@
         <img src="{{ asset('img/back.png') }}" class="back_img">
         <img src="{{ asset('img/search.png') }}" class="front_img">
         <div class="content">
-            <form role="form" action="{{ route('users.login') }} " method="POST">
+            <form role="form" action="{{ route('users.check') }} " method="POST">
+                {{ csrf_field() }}
               <div class="form-group">
-                 @include('common.error')
                 <input type="number" class="form-control" name="stu_id" placeholder="请输入学号">
                 <br>
                 <input type="password" class="form-control" name="password" placeholder="请输入密码">
                 <br>
+                @include('common.error')
                 <button class="btn btn-success btn-lg" type="submit">登录</button>
                 <button class="btn btn-default btn-lg" type="button">注册</button>
               </div>

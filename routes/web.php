@@ -14,3 +14,7 @@
 Route::get('/', 'PagesController@root')->name('root');
 
 Auth::routes();
+
+Route::resource('users', 'UsersController', ['only' => ['show', 'login']]);
+Route::get('/login', 'UsersController@login')->name('users.login');
+Route::patch('/login', 'UsersController@check')->name('users.check');
