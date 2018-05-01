@@ -13,7 +13,7 @@ class UsersController extends Controller {
 
 	}
 	public function check(UserRequest $request) {
-
+		dd($request->all());
 		return redirect()->route('user.show')->with('success', '登录成功');
 	}
 }
