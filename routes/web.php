@@ -15,6 +15,10 @@ Route::get('/', 'PagesController@root')->name('root');
 
 Auth::routes();
 
-Route::resource('users', 'UsersController', ['only' => ['show', 'login']]);
+Route::resource('users', 'UsersController', ['only' => ['show', 'login', 'register']]);
 Route::get('/login', 'UsersController@login')->name('users.login');
 Route::patch('/login', 'UsersController@check')->name('users.check');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');

@@ -22,9 +22,25 @@
                 <br>
                 @include('common.error')
                 <button class="btn btn-success btn-lg" type="submit">登录</button>
-                <button class="btn btn-default btn-lg" type="button">注册</button>
+                <button class="btn btn-default btn-lg" onclick="location.href='{{ route('register')}}'" type="button">激活</button>
+                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    Forgot Your Password?
+                </a>
               </div>
             </form>
+            <ul class="" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    退出登录
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
         </div>
 
 </body>
