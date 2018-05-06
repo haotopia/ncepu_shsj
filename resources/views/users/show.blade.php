@@ -14,7 +14,7 @@
         <div class="wrap">
         <div class="result">
             <div class="result_font">
-                <span class="info">姓名:<span>{{$user->name}}</span></span>
+                <span class="info">姓名:<span>name</span></span>
                 <span class="info">班级:<span>网络1601</span></span>
                 <span class="info">学号:<span>{{$user->stu_id}}</span></span>
                 <span class="info">总分:<span>99</span></span>
