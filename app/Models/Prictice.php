@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Prictice extends Model {
+	protected $table = 'prictices';
 	protected $fillable = [
-		'name', 'sp_time',
+		'name', 'created_time',
 	];
+
+	public function user() {
+		return $this->belogsTo(User::class);
+	}
 }

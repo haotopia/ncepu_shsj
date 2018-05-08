@@ -7,8 +7,11 @@ use App\Models\User;
 class UsersController extends Controller {
 
 	public function show(User $user) {
-
-		return view('users.show', compact('user'));
+		$students = $user->students;
+		$prictices = $user->prictice()
+			->orderBy('created_time', 'desc')
+			->paginate(20);
+		return view('users.show', compact('user', 'students', 'prictices'));
 	}
 	public function login() {
 		return view('users.login');

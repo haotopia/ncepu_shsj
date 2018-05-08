@@ -12,11 +12,10 @@ class CreatePricticesTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('prictices', function (Blueprint $table) {
-			$table->increments('id');
-			$table->string('stu_id', 15)->comment('学号');
-			$table->string('sp_name')->index()->comment('实践名称');
+			$table->string('stu_id', 15)->index()->comment('学号');
+			$table->string('sp_name')->comment('实践名称');
 			$table->tinyInteger('sp_class')->comment('实践等级');
-			$table->time('sp_time')->comment('实践时间');
+			$table->timestamp('created_time')->comment('实践时间');
 		});
 	}
 

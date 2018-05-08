@@ -9,8 +9,8 @@
 | application supports. The given channel authorization callbacks are
 | used to check if an authenticated user can listen to the channel.
 |
-*/
+ */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+Broadcast::channel('App.User.{stu_id}', function ($user, $stu_id) {
+	return (int) $user->stu_id === (int) $stu_id;
 });

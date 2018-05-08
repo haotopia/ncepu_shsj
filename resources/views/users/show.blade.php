@@ -14,8 +14,8 @@
         <div class="wrap">
         <div class="result">
             <div class="result_font">
-                <span class="info">姓名:<span>name</span></span>
-                <span class="info">班级:<span>网络1601</span></span>
+                <span class="info">姓名:<span>{{$students->stu_name}}</span></span>
+                <span class="info">班级:<span>{{$students->stu_class}}</span></span>
                 <span class="info">学号:<span>{{$user->stu_id}}</span></span>
                 <span class="info">总分:<span>99</span></span>
             </div>
@@ -31,50 +31,18 @@
              </tr>
            </thead>
            <tbody>
+            @if (count($prictices) >0)
+                @foreach ($prictices as $pri)
              <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格表格单元格</td>
+               <td>{{date("Y",strtotime($pri->created_time))}}年{{date("m",strtotime($pri->created_time))}}月</td>
+               <td>{{$pri->sp_name}}</td>
                <td>5</td>
              </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>6</td>
-             </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>7</td>
-             </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>2.2</td>
-             </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>2.2</td>
-             </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>2.2</td>
-             </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>2.2</td>
-             </tr>
-             <tr>
-               <td>2016-2017暑假</td>
-               <td>表格单元格</td>
-               <td>2.2</td>
-             </tr>
+                @endforeach
+            @endif
            </tbody>
         </table>
     </div>
-
 
 </body>
 </html>
