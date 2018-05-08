@@ -11,11 +11,11 @@
 |
  */
 
-Route::get('/', 'PagesController@root')->name('root');
+Route::get('/', 'UsersController@login')->name('root');
 
 Auth::routes();
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
-
+Route::get('/users', 'UsersController@showcheck')->name('users.showcheck');
 Route::get('/login', 'UsersController@login')->name('users.login');
 Route::patch('/login', 'UsersController@check')->name('users.check');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

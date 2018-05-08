@@ -18,15 +18,30 @@
                 <span class="info">班级:<span>{{$students->stu_class}}</span></span>
                 <span class="info">学号:<span>{{$user->stu_id}}</span></span>
                 <span class="info">总分:<span>99</span></span>
+                <div class="">
+                    <ul class="list-unstyled" role="menu">
+                        <li class="">
+                            <a class="btn btn-default btn-sm" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                退出登录
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         </div>
+
         <div class="table-responsive box">
         <table class="table table-bordered tableBox">
            <thead>
              <tr>
-               <th>学年假期</th>
-               <th>表格标题</th>
+               <th>实践时间</th>
+               <th>实践名称</th>
                <th>学分</th>
              </tr>
            </thead>
